@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curves, Waves, and Blobs</title>
+
+   
+    <style>
+      .nav ul
+{
+  float: left;
+}
+.nav {
+  height: 68px;
+  position: relative;
+  width: 100vw;
+  box-shadow: 0 0 10px #e1e5ee;
+
+ 
+}
+.nav__list {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  margin: 0 2rem;
+z-index: 101;
+ font-family: 'Montserrat', sans-serif;
+}
+.nav__listlogo {
+  font-size: 20px;
+  font-weight: bold;
+  list-style: none;
+  margin-right: auto;
+  cursor: pointer;
+  color: lightblue;
+}
+.nav__listlogo svg {
+  width: 2.5rem;
+  transition: fill 250ms ease-in;
+}
+.nav__listlogo svg:hover, .nav__listlogo svg:focus {
+  fill: #f06292;
+}
+.nav__listitem {
+  list-style: none;
+  font-weight: bold;
+  position: relative;
+  padding: 1.5rem 1rem;
+  cursor: pointer;
+
+}
+.nav__listitem::after {
+  content: "";
+  width: 0;
+  height: 0.3rem;
+  border-radius: 0.2rem;
+  position: absolute;
+  left: 1rem;
+  bottom: 0.8rem;
+  background-color: #f06292;
+  transition: width 200ms ease-in;
+  
+}
+.nav__listitem:hover::after, .nav__listitem:focus::after {
+  width: 80%;
+}
+.nav__listitem:hover ul, .nav__listitem:focus ul {
+  opacity: 100;
+  visibility: visible;
+}
+.nav__listitemdrop {
+  position: absolute;
+  top: 4rem;
+  left: -1rem;
+  box-shadow: 0 0 10px #e1e5ee;
+  background-color: white;
+  border-radius: 0.2rem;
+  width: 12rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  opacity: 100;
+  visibility: hidden;
+  transition: opacity 200ms ease-in-out;
+     z-index: 101;  
+}
+.nav__listitemdrop li {
+  list-style: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  transition: background-color 200ms ease-in-out;
+
+
+}
+.nav__listitemdrop li:hover, .nav__listitemdrop li:focus {
+  background-color: #fce4ec;
+
+
+}
+
+main
+
+
+{
+
+}
+      h1 {
+        font-size: 2.25rem;
+      }
+      p {
+        font-size: 1.25rem;
+    
+      }
+      .mainly {
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        color: white;
+        background: #202731;
+        overflow-x: hidden;
+
+      }
+
+      .mainly section {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 580px;
+        padding-top:  50px;
+
+      }
+
+      .blue { 
+        background: #6d31cd;
+
+      }
+
+   
+
+      /* Curved bg with plain CSS */
+
+      .curve {
+        position: absolute;
+        height: 250px;
+        width: 100%;
+        bottom: 0;
+        text-align: center;
+      }
+
+      .curve::before {
+        content: '';
+        display: block;
+        position: absolute;
+        border-radius: 100% 50%;
+        width: 55%;
+        height: 100%;
+        transform: translate(85%, 60%);
+        background-color: hsl(216, 21%, 16%);
+      }
+
+      .curve::after {
+        content: '';
+        display: block;
+        position: absolute;
+        border-radius: 100% 50%;
+        width: 55%;
+        height: 100%;
+        background: #6d31cd;
+        transform: translate(-4%, 40%);
+        z-index: 1;
+      }
+
+.bubble
+{
+  
+}
+   
+
+   
+
+
+
+.paragraph button {
+  margin: 20px;
+  outline: none;
+}
+.custom-btn {
+  width: 330px;
+  height: 60px;
+  padding: 10px 25px;
+  border: 2px solid #000;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+background-color: purple;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  color:white;
+  font-size: 20px;
+}
+.btn-11 {
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.btn-11:hover {
+   background: #000;
+  color: #fff;
+}
+.btn-11:before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    top: -180px;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background-color: #fff;
+    animation: shiny-btn1 3s ease-in-out infinite;
+}
+.btn-11:active{
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+}
+.paragraph
+{
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+
+    background-color: azure; color:white;  border-radius: 50%;
+   text-align:center;background-color: #6d31cd;
+}
+.ppp
+{
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  margin-top:30px;
+}
+.paragraph1
+{
+    width: 360px;
+    height: 360px;
+    position: relative;
+    margin: 30px;
+    background-color: azure; color:white;  border-radius: 50%;
+   text-align:center;background-color: #6d31cd;
+   list-style-image: url(warning.png);
+   padding: 40px;
+}
+
+@-webkit-keyframes shiny-btn1 {
+    0% { -webkit-transform: scale(0) rotate(45deg); opacity: 0; }
+    80% { -webkit-transform: scale(0) rotate(45deg); opacity: 0.5; }
+    81% { -webkit-transform: scale(4) rotate(45deg); opacity: 1; }
+    100% { -webkit-transform: scale(50) rotate(45deg); opacity: 0; }
+}
+.paragraph2 ul 
+{
+  list-style:none;
+    
+}
+.paragraph1 ul li {
+
+
+
+
+}
+.paragraph2 ul li:before
+{
+  
+  background-repeat: no-repeat;
+  content: "";
+  background-size: 20px;
+}
+#text
+{
+
+  list-style-image: url(playlist.png);
+  
+}
+#audio
+{
+  list-style-image: url(headphones.png);
+}
+#video
+{
+  list-style-image: url(video-player.png);
+}
+#content{list-style-image: url(online-lesson.png);}
+#train{list-style-image: url(game.png);}
+#progress{list-style-image: url(test.png);}
+.bubble{
+  position: relative;
+  width: 90vw;
+  height: 500px;
+  border-radius: 5vw;
+  background-color:#6d31cd;
+  top: 40px;
+  margin: auto;}
+
+
+.photo{
+  border-radius: 5vw;
+  height: 400px;
+  margin-top: 50px;
+  width: 300px;
+  position:absolute;
+  margin-left:5vw;
+  background-image:url(apay.jpeg); 
+  display: inline-block;
+  background-size: 300px 400px;
+
+
+}
+.interview{
+   margin-left:35vw;
+  margin-top: 50px;
+  position: absolute;
+  border-radius: 5vw;
+  height: 400px;
+  width: 50vw;
+  display: inline-block;
+  background-color: purple;
+}
+.interview h1{
+margin-top: 20px;
+font-size: 50px;
+}
+.interview ul li{
+  margin-left: 20px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+#q{
+
+  list-style-image: url(question.png);  
+}
+#a{
+  list-style-image: url(answer.png);
+}
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 100%;
+
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #11998e;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
+/* demo */ d
+    </style>
+  
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
+
+  </head>
+  <body>
+    <main>
+    <ul class="nav__list">
+      <li class="nav__listlogo">
+        Uiren
+      </li>
+      <li class="nav__listitem">Курсы
+        <ul class="nav__listitemdrop">
+          <li>Тематические</li>
+          <li>Грамматические</li>
+          <li>Мои курсы</li>
+        </ul>
+      </li>
+      <li class="nav__listitem">Грамматика
+        <ul class="nav__listitemdrop">
+          <li>Морфология</li>
+          <li>Синтаксис</li>
+          <li>Фонетика</li>
+          <li>Синтаксис</li>
+          <li>Словообразование</li>
+          <li>Лексика</li>
+        </ul>
+      </li>
+      <li class="nav__listitem">Словарь
+          <ul class="nav__listitemdrop">
+          <li>Тематические</li>
+          <li>По уровню</li>
+          <li>Мой словарь</li>
+        </ul>
+        </li>
+          <li class="nav__listitem">Тренировка
+          <ul class="nav__listitemdrop">
+          <li>Грамматика</li>
+          <li>Словарь</li>
+          <li>Брейншторм</li>
+        </ul>
+
+        </li>
+        <li class="nav__listitem">
+          О нас
+        </li>
+    </ul>
+  </nav>
+  <div class="mainly">
+    <section class="blue">
+
+     
+      <div class="paragraph">
+           <h1>Uiren!</h1>
+      
+        <p>Добро пожаловать на онлайн платформу Uiren! Здесь вы научитесь основам казахского языка, научитесь понимать язык и использовать его в повседневной жизни.</p>
+        
+ <div class="form__group field">
+  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+  <label for="name" class="form__label">Оставьте свой email адрес</label>
+</div>
+
+        <a href="grammar.html"> <button class="custom-btn btn-11" style="">Продолжить</button></a>
+      </div>
+      <div class="curve"></div>
+    </section>
+
+    <section>
+      <div class="ppp">
+        <div class="paragraph1 paragraph2" style="">
+          <h1 style="margin-top: 20px;">Материалы</h1>
+          <ul >
+           <li id="text">Тексты: сказки, отрывки из художественных книг и статей</li>
+           <li id="audio">Аудио: звучание букв, слов, предлжений; сказки, отрывки из инетврью и новостей; диалоги и песни</li>
+           <li id="video">Видео: обучающие уроки</li>
+      </ul>
+        
+      </div>
+ <div class="paragraph1" style="">
+          <h1 style="margin-top: 20px;">Цели проекта</h1>
+          <ul >
+           <li>Научить казахов, не понимающих свой язык,а потом русскоговорящих и иностранцев, использовать казахский язык</li>
+           <li>Популяризировать язык в Казахстане и зарубежом. Повысить статус и авторитет языка.</li>
+           <li>Из-за отсутсвия достаточных ресурсов на казахском языке, нам надо стать источником разнообразного контента</li>
+      </ul>
+        
+      </div>
+       <div class="paragraph1" style="">
+          <h1 style="margin-top: 20px;">Включает</h1>
+          <ul >
+           <li id="content">Контент на казахском языке (аудио, видео, текстовые материалы и дополнительные ресурсы)</li>
+           <li id="train">Расширение словарного запаса и знание грамматики. Будут упражнения для усвоения знаний</li>
+           <li id="progress">Отслеживание своего прогресса, в виде уровней. Проходя специальные тесты, можно узнать свой уровень владения языком</li>
+      </ul>
+        
+      </div>
+     </div>
+    </section>
+
+    <div class="bubble">
+    <div class="ggg photo"></div>
+    <div class="ggg interview" style="text-align: center;"> <h1 style="font-size: 18px">Учительница казахского языка - Козбагарова Базила Мусуркуловна</h1>
+      <ul>
+        <li id="q">Как вы думаете насколько повышается статус казахского языка, и важно ли знать казахский язык?</li>
+        <li id="a">В казахском обществе проблема языка по-прежнему остается актуальной. Есть люди, которые уважительно относятся к языку, а есть те, кто, будучи казахом по национальности, не может говорить на родном языке. Но я думаю, что в обществе растет уважение к языку. Конечно, важно. Знание языка - это знание истории, литературы, культуры, традиций и т.д.</li>
+        <li id="q">Должно ли употребление казахского языка ограничиваться только для общения в повеседневных ситуациях, или развитие его в литературной и научной сфере тоже важно? Что можете предложить чтобы расширить употребляемость языка?</li>
+        <li id="a">Конечно, не стоит ограничиваться разговорной речью. Художественные произведения на любом языке оказывают влияние на увеличение словарного запаса и  оказывают большое влияние. Думаю, что надо пропагандировать язык через СМИ, интернет, развивать образование и науку, особенно молодежь, заниматься творчеством, наукой</li>  
+      </ul>
+    </div>
+    </div>
+    
+    <section class="dark" style="background-color: #6d31cd;min-height:300px;position: relative;margin-top: 100px;">
+
+    </section>
+</div>
+ 
+</main>
+
+  </body>
+</html>

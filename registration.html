@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700">
+      <meta charset="utf-8">
+      <title>Форма регистрации/входа</title>
+      <link rel="stylesheet" href="style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <div class="wrap">
+         <div class="text-title">
+            <div class="title login">
+               Войти
+            </div>
+            <div class="title signup">
+               Регистрация
+            </div>
+         </div>
+         <div class="form-container">
+            <div class="slide-controls">
+               <input type="radio" name="slide" id="login" checked>
+               <input type="radio" name="slide" id="signup">
+               <label for="login" class="slide login">Войти</label>
+               <label for="signup" class="slide signup">Регистрация</label>
+               <div class="slider-tab"></div>
+            </div>
+            <div class="innerform">
+               <form action="grammar.html" method="post "class="login">
+                  <div class="field">
+                     <input type="text" placeholder="Электронная почта" required name="login">
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Пароль" required name="pass">
+                  </div>
+                  <div class="pass-link">
+                     <a href="#">Напишите заново пароль/почту</a>
+                  </div>
+                  <div class="field button">
+                     <div class="button-layer"></div>
+                     <input type="submit" value="Войти">
+                  </div>
+                  <div class="signup-link">
+                     У вас нету аккаунта? <a href="">Регистрация</a>
+                  </div>
+               </form>
+               <form action="registration.php" method="post" class="signup">
+                  <div class="field">
+                     <input type="text" placeholder="Электронная почта" required name="login">
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Пароль" required name="pass">
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Подтвердить пароль" required>
+                  </div>
+                  <div class="field btn">
+                     <div class="button-layer"></div>
+                     <input type="submit" value="Регистрация">
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+      <script>
+         const loginText = document.querySelector(".text-title .login");
+         const loginForm = document.querySelector("form.login");
+         const loginButton = document.querySelector("label.login");
+         const signupButton = document.querySelector("label.signup");
+         const signupLink = document.querySelector("form .signup-link a");
+         signupButton.onclick = (()=>{
+           loginForm.style.marginLeft = "-50%";
+           loginText.style.marginLeft = "-50%";
+         });
+         loginButton.onclick = (()=>{
+           loginForm.style.marginLeft = "0%";
+           loginText.style.marginLeft = "0%";
+         });
+         signupLink.onclick = (()=>{
+           signupButton.click();
+           return false;
+         });
+      </script>
+   </body>
+</html>

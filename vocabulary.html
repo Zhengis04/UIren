@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Montserrat, sans-serif;
+}
+.nav ul
+{
+	float: left;
+}
+.nav {
+  height: 68px;
+  position: relative;
+  width: 100vw;
+  box-shadow: 0 0 10px #e1e5ee;
+}
+.nav__list {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  margin: 0 2rem;
+}
+.nav__listlogo {
+  font-size: 20px;
+  font-weight: bold;
+  list-style: none;
+  margin-right: auto;
+  cursor: pointer;
+  color: lightblue;
+}
+.nav__listlogo svg {
+  width: 2.5rem;
+  transition: fill 250ms ease-in;
+}
+.nav__listlogo svg:hover, .nav__listlogo svg:focus {
+  fill: #f06292;
+}
+.nav__listitem {
+  list-style: none;
+  font-weight: bold;
+  position: relative;
+  padding: 1.5rem 1rem;
+  cursor: pointer;
+}
+.nav__listitem::after {
+  content: "";
+  width: 0;
+  height: 0.3rem;
+  border-radius: 0.2rem;
+  position: absolute;
+  left: 1rem;
+  bottom: 0.8rem;
+  background-color: #f06292;
+  transition: width 200ms ease-in;
+}
+.nav__listitem:hover::after, .nav__listitem:focus::after {
+  width: 80%;
+}
+.nav__listitem:hover ul, .nav__listitem:focus ul {
+  opacity: 1;
+  visibility: visible;
+}
+.nav__listitemdrop {
+  position: absolute;
+  top: 4rem;
+  left: -1rem;
+  box-shadow: 0 0 10px #e1e5ee;
+  background-color: white;
+  border-radius: 0.2rem;
+  width: 12rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease-in-out;
+}
+.nav__listitemdrop li {
+  list-style: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  transition: background-color 200ms ease-in-out;
+}
+.nav__listitemdrop li:hover, .nav__listitemdrop li:focus {
+  background-color: #fce4ec;
+}
+:root{
+  --background-dark: #2d3548;
+  --text-light: rgba(255,255,255,0.6);
+  --text-lighter: rgba(255,255,255,0.9);
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+  --width-container: 1200px;
+}
+
+.paragraph, .paragraph2
+{
+	background-color: white;
+	height: 20px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 20px;
+}
+.paragraph
+{
+	bottom: 140px;
+}
+*{
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+
+.hero-section{
+	position: relative;
+  align-items: flex-start;
+  height: 360px;
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-l);
+}
+
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--spacing-l);
+  grid-row-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  width: 100%;
+}
+
+@media(min-width: 540px){
+  .card-grid{
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media(min-width: 960px){
+  .card-grid{
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
+
+.card{
+  list-style: none;
+  position: relative;
+}
+
+.card:before{
+  content: '';
+  display: block;
+  padding-bottom: 150%;
+  width: 100%;
+}
+
+.card__background{
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--spacing-l);
+  bottom: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center;
+  trsnsform: scale(1) translateZ(0);
+  transition: 
+    filter 200ms linear,
+    transform 200ms linear;
+}
+
+.card:hover .card__background{
+  transform: scale(1.05) translateZ(0);
+}
+
+.card-grid:hover > .card:not(:hover) .card__background{
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.card__content{
+  left: 0;
+  padding: var(--spacing-l);
+  position: absolute;
+  top: 0;
+}
+
+.card__category{
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-s);
+  text-transform: uppercase;
+}
+
+.card__heading{
+  color: var(--text-lighter);
+  font-size: 1.4rem;
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+  line-height: 1.4;
+  word-spacing: 100vw;
+}
+
+footer
+{
+	position: relative;
+	width: 100%;
+	height: 120px;
+	background-color: white;
+}
+	</style>
+</head>
+<body>
+<nav class="nav">
+    <ul class="nav__list">
+      <a href="grammar.html"><li class="nav__listlogo">
+        Üiren
+      </li></a>
+      <li class="nav__listitem">Курсы
+        <ul class="nav__listitemdrop">
+          <li>Тематические</li>
+          <li>Грамматические</li>
+          <li>Мои курсы</li>
+        </ul>
+      </li>
+      <li class="nav__listitem">Грамматика
+        <ul class="nav__listitemdrop">
+          <li>Морфология</li>
+          <li>Синтаксис</li>
+          <li>Фонетика</li>
+          <li>Синтаксис</li>
+          <li>Словообразование</li>
+          <li>Лексика</li>
+        </ul>
+      </li>
+      <li class="nav__listitem">Словарь
+          <ul class="nav__listitemdrop">
+          <li>Тематические</li>
+          <li>По уровню</li>
+          <a href="vocabulary.html"><li>Мой словарь</li></a>
+        </ul>
+        </li>
+          <li class="nav__listitem">Тренировка
+          <ul class="nav__listitemdrop">
+          <li>Грамматика</li>
+          <li>Словарь</li>
+          <li>Брейншторм</li>
+        </ul>
+        <li class="nav__listitem">Казтест
+          <ul class="nav__listitemdrop">
+          <a href="index.html"><li>Лексико-грамматика</li></a>
+          <a href="html.php"><li>Чтение</li></a>
+        </ul>
+
+        </li>
+        <li class="nav__listitem">
+          О нас
+        </li>
+    </ul>
+  </nav>
+  <main>
+<div class="paragraph">
+	<p>Тематические словари</p>
+</div>
+  	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<section class="hero-section">
+
+  <div class="card-grid">
+    <a class="card" href="#">
+      <div class="card__background" style="background: rgb(131,110,23);
+background: linear-gradient(90deg, rgba(131,110,23,1) 25%, rgba(193,179,88,1) 75%);height: 200px;"></div>
+      <div class="card__content">
+        <p class="card__category">Начинающий</p>
+        <h3 class="card__heading">Топ 100 слов</h3>
+      </div>
+    </a>
+    <a class="card" href="#">
+      <div class="card__background" style="background:  #2A265F ;height: 200px;"></div>
+      <div class="card__content">
+        <p class="card__category">Начинающий</p>
+        <h3 class="card__heading">Существительные</h3>
+      </div>
+    </a>
+    <a class="card" href="#">
+      <div class="card__background" style="background:  #2A265F;height: 200px;"></div>
+      <div class="card__content">
+        <p class="card__category">Начинающий</p>
+        <h3 class="card__heading">Прилагательные</h3>
+      </div>
+    </li>
+    <a class="card" href="#">
+      <div class="card__background" style="background: #2A265F;height: 200px;"></div>
+      <div class="card__content">
+        <p class="card__category">Начинающий</p>
+        <h3 class="card__heading">Глаголы</h3>
+      </div>
+    </a>
+  <div>
+
+</section>
+<div class="paragraph2">
+	<p>Мой словарь</p>
+</div>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
+<section class="hero-section">
+
+  <div class="card-grid">
+    <a class="card" href="#">
+      <div class="card__background" style="background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);; height: 200px;  "></div>
+      <div class="card__content">
+        <p class="card__category">Изучено</p>
+        <h3 class="card__heading">100 слов</h3>
+      </div>
+    </a>
+    <a class="card" href="#">
+      <div class="card__background" style="background:  #2A265F; height: 200px; "></div>
+      <div class="card__content">
+        <p class="card__category">В изучении</p>
+        <h3 class="card__heading">50 слов</h3>
+      </div>
+    </a>
+    <a class="card" href="table.html">
+      <div class="card__background" style="background:  #2A265F; height: 200px; "></div>
+      <div class="card__content">
+        <p class="card__category">Добавлено</p>
+        <h3 class="card__heading">20 слов</h3>
+      </div>
+    </li>
+    <a class="card" href="#">
+      <div class="card__background" style="background:  #2A265F	; height: 200px; "></div>
+      <div class="card__content">
+        <p class="card__category">Рекомендуемое</p>
+        <h3 class="card__heading">246 слов</h3>
+      </div>
+    </a>
+  <div>
+
+</section>
+  </main>
+  <footer></footer>
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Montserrat, sans-serif;
+}
+.nav ul
+{
+	float: left;
+}
+ul li a:link
+{
+text-decoration: none;
+font-color: black;
+}
+.nav {
+  height: 68px;
+  position: relative;
+  width: 100vw;
+  box-shadow: 0 0 10px #e1e5ee;
+}
+.nav__list {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  margin: 0 2rem;
+}
+.nav__listlogo {
+  font-size: 20px;
+  font-weight: bold;
+  list-style: none;
+  margin-right: auto;
+  cursor: pointer;
+  color: lightblue;
+}
+.nav__listlogo svg {
+  width: 2.5rem;
+  transition: fill 250ms ease-in;
+}
+.nav__listlogo svg:hover, .nav__listlogo svg:focus {
+  fill: #f06292;
+}
+.nav__listitem {
+  list-style: none;
+  font-weight: bold;
+  position: relative;
+  padding: 1.5rem 1rem;
+  cursor: pointer;
+}
+.nav__listitem::after {
+  content: "";
+  width: 0;
+  height: 0.3rem;
+  border-radius: 0.2rem;
+  position: absolute;
+  left: 1rem;
+  bottom: 0.8rem;
+  background-color: #f06292;
+  transition: width 200ms ease-in;
+  z-index: 1;
+}
+.nav__listitem:hover::after, .nav__listitem:focus::after {
+  width: 80%;
+}
+.nav__listitem:hover ul, .nav__listitem:focus ul {
+  opacity: 1;
+  visibility: visible;
+}
+.nav__listitemdrop {
+  position: absolute;
+  top: 4rem;
+  left: -1rem;
+  box-shadow: 0 0 10px #e1e5ee;
+  background-color: white;
+  border-radius: 0.2rem;
+  width: 12rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease-in-out;
+}
+.nav__listitemdrop li {
+  list-style: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  transition: background-color 200ms ease-in-out;
+}
+.nav__listitemdrop li:hover, .nav__listitemdrop li:focus {
+  background-color: #fce4ec;
+}
+.courses-container {
+	
+}
+
+.course {
+
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	display: flex;
+	width: 100%;
+	margin: 20px;
+	overflow: hidden;
+	width: 700px;
+}
+
+.course h6 {
+	opacity: 0.6;
+	margin: 0;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.course h2 {
+	letter-spacing: 1px;
+	margin: 10px 0;
+}
+
+.course-preview {
+	background-color: #2A265F;
+	color: #fff;
+	padding: 30px;
+	width: 350px;
+	height: 220px;
+}
+
+.course-preview a {
+	color: #fff;
+	display: inline-block;
+	font-size: 12px;
+	opacity: 0.6;
+	margin-top: 30px;
+	text-decoration: none;
+}
+
+.course-info {
+	padding: 30px;
+	position: relative;
+	width: 100%;
+}
+
+.progress-container {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	text-align: right;
+	width: 150px;
+}
+
+.progress {
+	background-color: #ddd;
+	border-radius: 3px;
+	height: 5px;
+	width: 100%;
+}
+
+.progress::after {
+	border-radius: 3px;
+	background-color: #2A265F;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 5px;
+	width: 5%;
+}
+
+.progress-text {
+	font-size: 10px;
+	opacity: 0.6;
+	letter-spacing: 1px;
+}
+
+.btn {
+	background-color: #2A265F;
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 16px;
+	padding: 12px 25px;
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+	letter-spacing: 1px;
+}
+main
+{	width: 100%;
+	
+	justify-content: center;
+	display: flex;
+}
+	</style>
+
+</head>
+<body>
+<nav class="nav">
+    <ul class="nav__list">
+      <li class="nav__listlogo">
+      	Üiren
+      </li>
+      <li class="nav__listitem">Курсы
+        <ul class="nav__listitemdrop">
+          <li>Тематические</li>
+          <li>Грамматические</li>
+          <li>Мои курсы</li>
+        </ul>
+      </li>
+      <li class="nav__listitem">Грамматика
+        <ul class="nav__listitemdrop">
+          <li>Морфология</li>
+          <li>Синтаксис</li>
+          <li>Фонетика</li>
+          <li>Синтаксис</li>
+          <li>Словообразование</li>
+          <li>Лексика</li>
+        </ul>
+      </li>
+	    <li class="nav__listitem">Словарь
+          <ul class="nav__listitemdrop">
+          <li>Тематические</li>
+          <li>По уровню</li>
+          <a href="vocabulary.html"><li>Мой словарь</li></a>
+        </ul>
+        </li>
+          <li class="nav__listitem">Тренировка
+          <ul class="nav__listitemdrop">
+          <li>Грамматика</li>
+          <li>Словарь</li>
+          <li>Брейншторм</li>
+        </ul>
+        <li class="nav__listitem">Казтест
+          <ul class="nav__listitemdrop">
+          <a href="index.html"><li>Лексико-грамматика</li></a>
+          <a href="html.php"><li>Чтение</li></a>
+        </ul>
+
+        </li>
+        <li class="nav__listitem">
+        	О нас
+        </li>
+    </ul>
+  </nav>
+  <h1 class="" style="margin:15px 0px; text-align: center;">Курсы</h1>
+  <main>
+  	
+  	<div class="blocks">
+  		<div class="courses-container">
+	<div class="course">
+		<div class="course-preview">
+			<h6>Введение в казахский язык</h6>
+			<h2>История казахского языка</h2>
+			<a href="html.html">Посмотреть все <i class="fas fa-chevron-right"></i></a>
+		</div>
+		<div class="course-info">
+			<div class="progress-container">
+				<div class="progress"></div>
+				<span class="progress-text">
+					0/3 прогресс
+				</span>
+			</div>
+			<h6>1 тема</h6>
+			<h2>1 подтема</h2>
+			<a href="alphabet.html"><button class="btn">Продолжить</button></a>
+		</div>
+	</div>
+	</div>
+<div class="courses-container">
+	<div class="course">
+		<div class="course-preview">
+			<h6>Введение в казахский язык</h6>
+			<h2>Алфавит</h2>
+			<a href="#">Посмотреть все <i class="fas fa-chevron-right"></i></a>
+		</div>
+		<div class="course-info">
+			<div class="progress-container">
+				<div class="progress"></div>
+				<span class="progress-text">
+					0/42 прогресс
+				</span>
+			</div>
+			<h6>2 тема</h6>
+			<h2>1 подтема</h2>
+			<a href="alphabet.html"><button class="btn">Продолжить</button></a>
+		</div>
+	</div>
+	</div>
+	<div class="courses-container">
+	<div class="course">
+		<div class="course-preview">
+			<h6>Введение в казахский язык</h6>
+			<h2>Гласные и согласные буквы</h2>
+			<a href="#">Посмотреть все <i class="fas fa-chevron-right"></i></a>
+		</div>
+		<div class="course-info">
+			<div class="progress-container">
+				<div class="progress"></div>
+				<span class="progress-text">
+					0/3 прогресс
+				</span>
+			</div>
+			<h6>3 тема</h6>
+			<h2>1 подтема</h2>
+			<button class="btn">Продолжить</button>
+		</div>
+	</div>
+	</div>
+	<div class="courses-container">
+	<div class="course">
+		<div class="course-preview">
+			<h6>Введение в казахский язык</h6>
+			<h2>Слоги</h2>
+			<a href="#">Посмотреть все <i class="fas fa-chevron-right"></i></a>
+		</div>
+		<div class="course-info">
+			<div class="progress-container">
+				<div class="progress"></div>
+				<span class="progress-text">
+					0/1 прогресс
+				</span>
+			</div>
+			<h6>4 тема</h6>
+			<h2>1 подтема</h2>
+			<button class="btn">Продолжить</button>
+		</div>
+	</div>
+	</div>
+
+
+
+
+  	</div>
+  </main>
+</body>
+</html>
